@@ -1,0 +1,44 @@
+{
+  "name": "eslint-plugin-terra",
+  "version": "0.0.0",
+  "description": "An ESLint plugin for Terra",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephenEsser/eslint-plugin-terra"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "Cerner",
+    "Terra"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/StephenEsser/eslint-plugin-terra/issues"
+  },
+  "homepage": "https://github.com/StephenEsser/eslint-plugin-terra",
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "clean:install": "npm run clean && npm install",
+    "danger": "danger ci",
+    "test": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha tests/lib/**/*.js",
+    "prepublishOnly": "npm run lint",
+    "release:major": "npm version major -m 'Released version %s' && npm publish",
+    "release:minor": "npm version minor -m 'Released version %s' && npm publish",
+    "release:patch": "npm version patch -m 'Released version %s' && npm publish"
+  },
+  "dependencies": {
+    "jsx-ast-utils": "^2.1.0"
+  },
+  "peerDependencies": {
+    "eslint": "^5.0.0"
+  },
+  "devDependencies": {
+    "danger": "^3.7.14",
+    "eslint": "^5.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.1.4"
+  }
+}
